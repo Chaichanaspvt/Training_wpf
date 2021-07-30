@@ -1,0 +1,17 @@
+﻿<Window x:Class="WPF_MVVM_Halcon.Views.MainView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Library_widget="clr-namespace:Library_widget;assembly=Library_widget" xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet"
+             FontSize="18" Background="White"
+             xmlns:loc="clr-namespace:WPF_MVVM_Halcon.ViewModels"
+             Height="960" Width="1600" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <loc:MainViewModel />
+    </Window.DataContext>
+    <Grid >
+
+      
+    </Grid>
+
+
+</Window>
