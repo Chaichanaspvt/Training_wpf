@@ -28,21 +28,9 @@
         <!---LED -->
         <Ellipse x:Name="Light" Grid.Column="2" Fill="#FFA0A0A0" HorizontalAlignment="Left" Height="77" Margin="23,0.4,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="99"/>
         <Label Content="Camera" Grid.Column="2" HorizontalAlignment="Center" Height="42" Margin="39,95.4,22.8,262.6" Grid.Row="1" VerticalAlignment="Center" Width="83" FontSize="18" RenderTransformOrigin="0.494,1.038"/>
-        <Label Content="Open Camera" Grid.Column="3" HorizontalAlignment="Center" Height="42" Margin="36.2,95.4,37.6,262.6" Grid.Row="1" VerticalAlignment="Center" Width="135" FontSize="18"/>
         <Label x:Name="lb_cycletime" Content="Cycle time ............................................" Grid.Column="1" HorizontalAlignment="Left" Margin="26,0.4,0,0" Grid.Row="2" VerticalAlignment="Top" Height="60" Width="364" FontSize="24"/>
-
-
-
-
-
-        <Library_widget:btn_Toggle x:Name="btn_open_Image" Grid.Column="3" HorizontalAlignment="Left" Height="95" Margin="36.2,0,0,0" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.408,0.292" MouseLeftButtonDown="Btn_open_Image_MouseLeftButtonDown" Grid.RowSpan="2"/>
-        <Library_widget:btn_Toggle x:Name="btn_Run" Grid.Column="3" HorizontalAlignment="Left" Height="95" Margin="36.2,142.4,0,0" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.408,0.292" MouseLeftButtonDown="Btn_open_Image_MouseLeftButtonDown" Grid.Row="1"/>
-        <Label Content="Run" Grid.Column="3" HorizontalAlignment="Center" Height="42" Margin="82.2,242.4,79.6,115.6" Grid.Row="1" VerticalAlignment="Center" Width="47" FontSize="18"/>
-        <local:ToggleButton Grid.Column="3" HorizontalAlignment="Left" Margin="10,299,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-
-
-
-
+        <local:ToggleButton x:Name="Btn_Run"  Grid.Column="3" HorizontalAlignment="Left" Height="95" Margin="36,0,0,0" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.408,0.292" MouseLeftButtonDown="Btn_open_Image_MouseLeftButtonDown" Grid.Row="1"/>
+        <Label Content="Run" Grid.Column="3" HorizontalAlignment="Center" Height="42" Margin="80,95,82,263" Grid.Row="1" VerticalAlignment="Center" Width="47" FontSize="18"/>
 
     </Grid>
 </Window>

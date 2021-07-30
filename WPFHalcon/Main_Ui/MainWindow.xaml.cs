@@ -89,7 +89,7 @@ namespace Main_Ui
         private void Btn_open_Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //check toggle 
-            if (btn_open_Image._Toggle)
+            if (Btn_Run.Toggle1)
             {
                 var watch = System.Diagnostics.Stopwatch.StartNew();
 
