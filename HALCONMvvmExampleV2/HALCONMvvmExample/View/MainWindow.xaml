@@ -1,0 +1,71 @@
+﻿<Window x:Class="HALCONMvvmExample.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet"
+        xmlns:local="clr-namespace:HALCONMvvmExample.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1024"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <HalconDotNet:HSmartWindowControlWPF Grid.Column="0" x:Name="HSM0" MinWidth="200" HDisplayCurrentObject="{Binding SingleImage}" />
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="5">
+            <Button Command="{Binding LoadSingleImage}" Content="Display Single Image" />
+            <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+                You can use the HDisplayCurrentObject property to bind a single HObject.
+            </TextBlock>
+        </StackPanel>
+        
+        <HalconDotNet:HSmartWindowControlWPF Grid.Column="1" x:Name="HSM1" MinWidth="200" >
+            <HalconDotNet:HIconicDisplayObjectWPF IconicObject="{Binding ImageItem}"/>
+            <HalconDotNet:HIconicDisplayObjectWPF IconicObject="{Binding RegionItem}" HColor="{Binding RegionColor}" HDraw="fill" />
+            <HalconDotNet:HMessageDisplayObjectWPF HMessageText="{Binding MessageText}" />
+        </HalconDotNet:HSmartWindowControlWPF>
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition /> <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Command="{Binding LoadImageItem}" Content="Display Image" />
+                <Button Grid.Column="1" Command="{Binding LoadRegionItem}" Content="Display Region" />
+                <Button Grid.Column="2" Command="{Binding LoadMessageText}" Content="Display Message" />
+                <Button Grid.ColumnSpan="3" Grid.Row="1" Command="{Binding ClearItems}" Content="Clear All" />
+            </Grid>
+            <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+                You can add HIconicDisplayObjectWPFs and HMessageDisplayObjectWPFs to the HSmartWindowControlWPF Items in XAML or code behind, and bind their properties to
+                HObject, etc. properties in your ViewModel.
+            </TextBlock>
+        </StackPanel>
+        <HalconDotNet:HSmartWindowControlWPF Grid.Column="2" ItemsSource="{Binding MultipleObjects}" HColor="{Binding Path=Text, ElementName=HSM2ColorBox}" MinWidth="200">
+            
+        </HalconDotNet:HSmartWindowControlWPF>
+        <StackPanel Grid.Column="2" Grid.Row="1" Margin="5">
+            <Button Command="{Binding LoadObjects}" x:Name="HSM2" Content="Display Image + Region" />
+            <ComboBox x:Name="HSM2ColorBox" SelectedIndex="0" Margin="0,5,0,0">
+                <ComboBoxItem Content="red"/>
+                <ComboBoxItem Content="green"/>
+                <ComboBoxItem Content="white"/>
+            </ComboBox>
+            <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+                The Button displays an image and two regions. <LineBreak/><LineBreak/>
+                The color of the first region can be controlled by the ComboBox. <LineBreak/><LineBreak/>
+                The color of the second region is controlled by the ViewModel.
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
